@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: iafrontendmovies
+    runtime: static
+    buildCommand: yarn build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://proyecto-movie-app.onrender.com/api/v1
+    routes:
+      # SPA fallback: React Router handles client-side routing, so every path must serve index.html
+      - type: rewrite
+        source: /*
+        destination: /index.html
