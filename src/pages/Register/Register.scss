@@ -1,0 +1,19 @@
+// Register page layout — centers the signup form vertically and horizontally
+@use '../../styles/variables';
+@use '../../styles/mixins';
+
+.register {
+  @include mixins.flex-center;
+  min-height: 100vh;
+  padding: variables.$sp-24;
+
+  &__form {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  &__title {
+    margin-bottom: variables.$sp-24;
+    text-align: center;
+  }
+}
