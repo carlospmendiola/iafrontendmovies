@@ -1,0 +1,34 @@
+// Card — movie poster, title and year
+@use '../../styles/variables';
+@use '../../styles/mixins';
+
+.card {
+  @include mixins.flex(column);
+  background-color: variables.$color-surface;
+  border-radius: variables.$radius-md;
+  overflow: hidden;
+  transition: variables.$transition;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  &__poster {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    background-color: variables.$color-border;
+  }
+
+  &__title {
+    @include mixins.truncate;
+    padding: variables.$sp-8 variables.$sp-12 0;
+    font-size: variables.$txt-sm;
+  }
+
+  &__year {
+    padding: 0 variables.$sp-12 variables.$sp-12;
+    color: variables.$color-text-muted;
+    font-size: variables.$txt-xs;
+  }
+}

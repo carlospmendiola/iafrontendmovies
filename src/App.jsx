@@ -1,13 +1,17 @@
-import { useState } from 'react'
-import './App.css'
+// Root component — wraps the app with routing and authentication context providers
+import { BrowserRouter } from 'react-router-dom'
+import { AuthProvider } from './context/AuthContext'
+import Navbar from './components/Navbar/Navbar'
+import AppRouter from './routes/AppRouter'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    
-    </>
+    <BrowserRouter>
+      <AuthProvider>
+        <Navbar />
+        <AppRouter />
+      </AuthProvider>
+    </BrowserRouter>
   )
 }
 

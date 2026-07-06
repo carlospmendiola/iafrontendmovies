@@ -1,0 +1,28 @@
+// Admin page — movie creation form and management list
+@use '../../styles/variables';
+@use '../../styles/mixins';
+
+.admin {
+  padding: variables.$sp-16;
+
+  &__title {
+    margin-bottom: variables.$sp-24;
+  }
+
+  &__form {
+    max-width: 400px;
+    margin-bottom: variables.$sp-32;
+  }
+
+  &__list {
+    @include mixins.flex(column);
+    gap: variables.$sp-8;
+  }
+
+  &__item {
+    @include mixins.flex-between;
+    padding: variables.$sp-12;
+    background-color: variables.$color-surface;
+    border-radius: variables.$radius-md;
+  }
+}

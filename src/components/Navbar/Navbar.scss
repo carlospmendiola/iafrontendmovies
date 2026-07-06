@@ -1,0 +1,31 @@
+// Navbar — top navigation bar
+@use '../../styles/variables';
+@use '../../styles/mixins';
+
+.navbar {
+  @include mixins.flex-between;
+  padding: variables.$sp-16;
+  background-color: variables.$color-surface;
+  border-bottom: 1px solid variables.$color-border;
+
+  &__brand {
+    font-family: variables.$font-secondary;
+    font-weight: variables.$fw-bold;
+    // $color-primary as text on $color-bg only reaches 3.84:1 (fails WCAG AA 4.5:1) — use $color-text instead
+    color: variables.$color-text;
+  }
+
+  &__links {
+    @include mixins.flex(row, flex-end, center);
+    gap: variables.$sp-16;
+  }
+
+  &__link {
+    font-size: variables.$txt-sm;
+    color: variables.$color-text;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+// MovieDetail page — poster and info layout
+@use '../../styles/variables';
+@use '../../styles/mixins';
+
+.movie-detail {
+  @include mixins.flex(column);
+  gap: variables.$sp-24;
+  padding: variables.$sp-16;
+
+  @include mixins.bp-768 {
+    flex-direction: row;
+  }
+
+  &__status {
+    padding: variables.$sp-24;
+  }
+
+  &__error {
+    padding: variables.$sp-24;
+    color: variables.$color-error;
+  }
+
+  &__poster {
+    width: 100%;
+    max-width: 320px;
+    border-radius: variables.$radius-md;
+  }
+
+  &__info {
+    @include mixins.flex(column);
+    gap: variables.$sp-8;
+  }
+
+  &__year {
+    color: variables.$color-text-muted;
+  }
+
+  &__description {
+    margin-top: variables.$sp-8;
+  }
+}

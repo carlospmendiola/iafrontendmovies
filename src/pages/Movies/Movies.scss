@@ -1,0 +1,46 @@
+// Movies page — search form and results grid
+@use '../../styles/variables';
+@use '../../styles/mixins';
+
+.movies {
+  padding: variables.$sp-16;
+
+  &__search {
+    @include mixins.flex(row, flex-start, flex-end);
+    flex-wrap: wrap;
+    gap: variables.$sp-16;
+    margin-bottom: variables.$sp-24;
+
+    .form__field {
+      flex: 1;
+      min-width: 200px;
+    }
+  }
+
+  &__error {
+    color: variables.$color-error;
+    margin-bottom: variables.$sp-16;
+  }
+
+  &__empty {
+    color: variables.$color-text-muted;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: variables.$sp-16;
+
+    @include mixins.bp-768 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mixins.bp-990 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include mixins.bp-1200 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}

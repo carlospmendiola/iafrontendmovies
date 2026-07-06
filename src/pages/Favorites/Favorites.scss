@@ -1,0 +1,47 @@
+// Favorites page — grid of favorite movies with a remove action
+@use '../../styles/variables';
+@use '../../styles/mixins';
+
+.favorites {
+  padding: variables.$sp-16;
+
+  &__status {
+    padding: variables.$sp-24;
+  }
+
+  &__error {
+    padding: variables.$sp-24;
+    color: variables.$color-error;
+  }
+
+  &__title {
+    margin-bottom: variables.$sp-24;
+  }
+
+  &__empty {
+    color: variables.$color-text-muted;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: variables.$sp-16;
+
+    @include mixins.bp-768 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mixins.bp-990 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include mixins.bp-1200 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  &__item {
+    @include mixins.flex(column);
+    gap: variables.$sp-8;
+  }
+}
