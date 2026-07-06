@@ -20,13 +20,13 @@ Tecnologías y las versiones que se van a usar. No instalar dependencias sin pre
 | Aspecto            | Decisión                                                       |
 | ------------------ | -------------------------------------------------------------- |
 | Gestor de paquetes | Yarn                                                           |
-| Entorno desarrollo | Vite 6 + React Compiler + ESLint 10 (Flat Config)              |
+| Entorno desarrollo | Vite 8 + React Compiler + ESLint 10 (Flat Config)              |
 | Lenguaje           | JavaScript (JSX), sin TypeScript                               |
 | Biblioteca Core    | React 19 con createRoot                                        |
 | Preprocesador      | SASS (SCSS) — nada de Tailwind, Bootstrap o estilos inline     |
 | Organización SCSS  | src/styles/ con style.scss y partials globales. Cada componente importa su propio .scss directamente desde el JSX                                     |
 | Metodología BEM    | A la hora de nombrar las clases CSS                            |
-| Enrutamiento       | React Router v6  con rutas protegidas por rol                  |
+| Enrutamiento       | React Router v7  con rutas protegidas por rol                  |
 | Estado global      | Context API (solo para autenticación). Estado local con hooks para lo demás |
 | Consumo API        | Fetch nativo con wrapper en src/services/api.js. Token JWT en localStorage |
 | Pruebas            | Vitest + React Testing Library (únicas autorizadas)            |
