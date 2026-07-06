@@ -2,6 +2,21 @@
 
 Todos los cambios notables de este proyecto se documentan en este archivo, siguiendo el formato de [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) y [Semantic Versioning](https://semver.org/).
 
+## [1.0.0] - 2026-07-04
+
+### Added
+- Despliegue en producción en Render como sitio estático (`https://iafrontendmovies.onrender.com`), configurado con `render.yaml`
+- Regla de rewrite `/* → /index.html` en el Dashboard de Render para que las rutas de React Router no den 404 al cargar o recargar directamente (verificado en `/`, `/login`, `/register`, `/movies`, `/movies/:id`, `/favorites` y `/admin`)
+
+### Fixed
+- El archivo `public/_redirects` (convención de Netlify) no funciona en Render — se servía como archivo estático plano en vez de aplicarse como regla de enrutamiento; se elimina en favor de la regla configurada directamente en el Dashboard
+
+### Verified
+- Suite de tests completa en verde (60 tests) y cobertura global por encima del 80% en statements, funciones y líneas
+- Accesibilidad: contraste WCAG AA, HTML semántico, navegación completa por teclado, `alt` en imágenes y `label` en todos los inputs
+- Responsive comprobado en mobile (375px), tablet (768px), desktop medio (990px) y desktop grande (1200px)
+- Bundle de producción verificado apuntando a la URL correcta del backend (`https://proyecto-movie-app.onrender.com/api/v1`)
+
 ## [0.3.1] - 2026-07-02
 
 ### Fixed

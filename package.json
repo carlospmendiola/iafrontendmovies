@@ -1,7 +1,7 @@
 {
   "name": "iafrontendmovies",
   "private": true,
-  "version": "0.3.1",
+  "version": "1.0.0",
   "type": "module",
   "resolutions": {
     "vite": "^8.1.0"
