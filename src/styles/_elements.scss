@@ -1,0 +1,83 @@
+// Reusable UI elements — buttons and form inputs
+@use './variables';
+@use './mixins';
+
+// ─── Buttons ─────────────────────────────────────────────────────────────────
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: variables.$sp-8;
+  padding: variables.$sp-8 variables.$sp-24;
+  border-radius: variables.$radius-md;
+  font-size: variables.$txt-sm;
+  font-weight: variables.$fw-semibold;
+  font-family: variables.$font-primary;
+  transition: variables.$transition;
+  cursor: pointer;
+  border: 2px solid transparent;
+
+  &--primary {
+    background-color: variables.$color-primary;
+    color: variables.$color-text;
+    &:hover { background-color: variables.$color-primary-dark; }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: variables.$color-text;
+    border-color: variables.$color-border;
+    &:hover { border-color: variables.$color-text; }
+  }
+
+  &--danger {
+    background-color: variables.$color-error;
+    color: variables.$color-text;
+    &:hover { opacity: 0.85; }
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// ─── Form inputs ──────────────────────────────────────────────────────────────
+.form {
+  @include mixins.flex(column, flex-start, stretch);
+  gap: variables.$sp-16;
+
+  &__field {
+    @include mixins.flex(column, flex-start, stretch);
+    gap: variables.$sp-8;
+  }
+
+  &__label {
+    font-size: variables.$txt-sm;
+    font-weight: variables.$fw-semibold;
+    color: variables.$color-text;
+  }
+
+  &__input {
+    padding: variables.$sp-12 variables.$sp-16;
+    background-color: variables.$color-surface;
+    border: 1px solid variables.$color-border;
+    border-radius: variables.$radius-md;
+    color: variables.$color-text;
+    font-size: variables.$txt-base;
+    transition: variables.$transition;
+
+    &:focus {
+      outline: none;
+      border-color: variables.$color-primary;
+    }
+
+    &--error { border-color: variables.$color-error; }
+  }
+
+  &__error {
+    font-size: variables.$txt-xs;
+    color: variables.$color-error;
+  }
+}

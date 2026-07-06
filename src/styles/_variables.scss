@@ -1,0 +1,53 @@
+// ─── Typography ──────────────────────────────────────────────────────────────
+$font-primary: 'Inter', sans-serif;      // Main UI font
+$font-secondary: 'Merriweather', serif;  // Headings and titles
+
+// ─── Font sizes ──────────────────────────────────────────────────────────────
+$txt-xl:    2.5rem;
+$txt-lg:    1.8rem;
+$txt-md:    1.25rem;
+$txt-base:  1rem;
+$txt-sm:    0.875rem;
+$txt-xs:    0.75rem;
+
+// ─── Font weights ────────────────────────────────────────────────────────────
+$fw-bold:     700;
+$fw-semibold: 600;
+$fw-regular:  400;
+$fw-light:    300;
+
+// ─── Colors ──────────────────────────────────────────────────────────────────
+$color-primary:       #E50914;   // Netflix-inspired red — main actions
+$color-primary-dark:  #B20710;   // Hover state for primary
+$color-secondary:     #F5F5F1;   // Off-white — card backgrounds
+$color-bg:            #141414;   // Dark background
+$color-surface:       #1F1F1F;   // Cards and panels
+$color-text:          #FFFFFF;   // Main text on dark background
+$color-text-muted:    #A3A3A3;   // Secondary text
+$color-error:         #CF6679;   // Error states
+$color-success:       #4CAF50;   // Success states
+$color-border:        #2C2C2C;   // Borders and dividers
+
+// ─── Spacing ─────────────────────────────────────────────────────────────────
+$sp-4:   4px;
+$sp-8:   8px;
+$sp-12:  12px;
+$sp-16:  16px;
+$sp-24:  24px;
+$sp-32:  32px;
+$sp-48:  48px;
+$sp-64:  64px;
+
+// ─── Border radius ───────────────────────────────────────────────────────────
+$radius-sm:   4px;
+$radius-md:   8px;
+$radius-lg:   16px;
+$radius-full: 9999px;
+
+// ─── Breakpoints ─────────────────────────────────────────────────────────────
+$bp-768:  768px;
+$bp-990:  990px;
+$bp-1200: 1200px;
+
+// ─── Transitions ─────────────────────────────────────────────────────────────
+$transition: all 0.2s ease;

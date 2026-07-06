@@ -1,0 +1,7 @@
+// Global stylesheet entry point — import order matters
+@use 'variables';
+@use 'reset';
+@use 'fonts';
+@use 'mixins';
+@use 'estructura';
+@use 'elements';

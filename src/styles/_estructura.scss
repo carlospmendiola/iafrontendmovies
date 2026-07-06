@@ -1,0 +1,26 @@
+// Global layout — main structure, header, footer and container utilities
+@use './variables';
+@use './mixins';
+
+// Note: not a global `main { ... }` tag selector — every page renders its own
+// semantic <main>, so a tag-level rule would force full-height on all of them
+// (e.g. Movies, Admin) instead of just the pages that want it (Login, Register
+// already set their own min-height: 100vh on their BEM block).
+
+.container {
+  width: 100%;
+  padding: 0 variables.$sp-16;
+
+  @include mixins.bp-768 { max-width: 720px; margin: 0 auto; }
+  @include mixins.bp-990 { max-width: 960px; }
+  @include mixins.bp-1200 { max-width: 1200px; }
+}
+
+footer {
+  margin-top: auto;
+  padding: variables.$sp-24 0;
+  text-align: center;
+  border-top: 1px solid variables.$color-border;
+  color: variables.$color-text-muted;
+  font-size: variables.$txt-sm;
+}

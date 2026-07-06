@@ -1,0 +1,27 @@
+// Reusable utility mixins — import only in files that need them
+@use './variables';
+
+// Flex shortcuts
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin flex-center { display: flex; justify-content: center; align-items: center; }
+@mixin flex-between { display: flex; justify-content: space-between; align-items: center; }
+
+// Responsive breakpoints — always mobile first
+@mixin bp-768 { @media screen and (min-width: variables.$bp-768) { @content; } }
+@mixin bp-990 { @media screen and (min-width: variables.$bp-990) { @content; } }
+@mixin bp-1200 { @media screen and (min-width: variables.$bp-1200) { @content; } }
+
+// Typography helpers
+@mixin truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@mixin visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
