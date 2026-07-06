@@ -1,19 +1,60 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 # iafrontendmovies
+
+Frontend de una aplicación de películas: búsqueda, detalle, favoritos y un panel de administración para gestionar el catálogo. Consume la API REST documentada en [movie-app-api.yaml](https://raw.githubusercontent.com/carlospmendiola/Proyecto-Movie-App/develop/movie-app-api.yaml).
+
+Ver [AGENTS.md](./AGENTS.md) para las convenciones del proyecto (stack, arquitectura, TDD, estilo de commits) y [plan-desarrollo.md](./plan-desarrollo.md) para el plan de desarrollo por fases.
+
+## Stack
+
+Vite 8 + React 19 (React Compiler) · React Router 7 · SASS (BEM, Mobile First) · Context API (auth) · Vitest + React Testing Library
+
+## Requisitos
+
+- Node.js y Yarn
+- Backend en marcha (ver `VITE_API_URL` más abajo)
+
+## Puesta en marcha
+
+```bash
+yarn install
+cp .env.example .env   # y ajustar VITE_API_URL si hace falta
+yarn dev
+```
+
+## Variables de entorno
+
+| Variable       | Descripción                          |
+| -------------- | ------------------------------------- |
+| `VITE_API_URL` | URL base de la API (incluye `/api/v1`, ver el bloque `servers` del spec OpenAPI) |
+
+## Scripts
+
+| Comando               | Descripción                        |
+| ---------------------- | ------------------------------------ |
+| `yarn dev`             | Servidor de desarrollo               |
+| `yarn build`           | Build de producción en `dist/`       |
+| `yarn preview`         | Sirve el build de producción en local |
+| `yarn lint`            | ESLint                                |
+| `yarn test`            | Tests (Vitest)                        |
+| `yarn test:coverage`   | Tests con reporte de cobertura        |
+
+## Estructura
+
+Ver la sección "Estructura de carpetas" en [AGENTS.md](./AGENTS.md) y el detalle de arquitectura en [docs/arquitectura.md](./docs/arquitectura.md).
+
+## Documentación
+
+- [docs/arquitectura.md](./docs/arquitectura.md) — decisiones de arquitectura
+- [docs/componentes.md](./docs/componentes.md) — catálogo de componentes
+- [docs/hooks.md](./docs/hooks.md) — catálogo de custom hooks
+- [docs/api.md](./docs/api.md) — endpoints consumidos
+- [docs/diseno.md](./docs/diseno.md) — sistema de diseño (colores, tipografía, espaciado, botones)
+- [CHANGELOG.md](./CHANGELOG.md) — historial de cambios
+
+## Despliegue
+
+Configurado para Render como sitio estático vía [render.yaml](./render.yaml):
+
+1. Conectar este repositorio en Render (New → Blueprint, detecta `render.yaml` automáticamente)
+2. Build command: `yarn build` — Publish directory: `dist`
+3. Variable de entorno `VITE_API_URL` ya viene definida en `render.yaml`; ajustar si el backend cambia de URL
